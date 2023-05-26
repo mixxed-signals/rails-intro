@@ -1,0 +1,19 @@
+<h1>contact us</h1>
+
+<h2>who do you want to contact</h2>
+
+<% @members = ["thanh", "dimitri", "germain", "damien", "julien"] %>
+
+<form action="/contact" method="get"> <%# reload page, by default method=post %>
+<label for="member">Type here</label>
+<input id="member" name = "member" type="text" value="<%= params[:member]%>" placeholder="Type here">
+<input type="submit">
+</form>
+
+
+<h2>Meet our team</h2>
+<ol>
+  <% @members.each do |member| %>
+    <li><%= member.capitalize %></li>
+  <% end %>
+</ol>
